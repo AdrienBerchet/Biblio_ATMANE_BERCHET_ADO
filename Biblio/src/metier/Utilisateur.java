@@ -13,19 +13,6 @@ public class Utilisateur extends Personne {
 	private String pseudonyme;
 	
 	
-	
-	
-	/*A déplacer dans la classe Adhérent*/
-	
-	/** Attribut de la durée max d'emprunt d'un livre*/
-	//private Integer dureeMaxPret = 15;
-	/** Attribut du nombre de prêt maximal autorisé*/
-	//private static Integer nbMaxPrets = 3;
-	
-	
-	
-	
-	
 	/* A adapter au modèle dès la construction des classes correspondantes*/
 	
 	/** Liste des livres empruntés par l'utilisateur*/
@@ -91,6 +78,10 @@ public class Utilisateur extends Personne {
 	
 	
 	
+
+
+
+
 	/* A conserver et adapter aux classes emprunts crées
 	 * 
 	 * 
@@ -193,7 +184,17 @@ public class Utilisateur extends Personne {
 		 return isConditionsPretAcceptees;
 }	
 	*/
+	
+	@Override
+	public String toString() {
+		return "Utilisateur [ nom =" + getNom() + ", prenom = " + getPrenom() + ", idUtilisateur = " + idUtilisateur + ", pwd = " + pwd + ", pseudonyme = " + pseudonyme
+				+ "]";
+	}
+	
+	
 	public static void main(String []args) throws BiblioException  {
-		
+		Utilisateur u1 = new Utilisateur("Nom1", "Prénom1");
+		Utilisateur u2 = new Utilisateur("Nom2", "Prénom2", 100 , "mdp", "pseudo");
+		System.out.println(u1 + "\n" + u2);
 	}
 }

@@ -1,11 +1,20 @@
 package metier;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class Personne {
+	/** Attribut nom de la personne*/
 	private String nom;
-	private  String prenom;
+	/** Attribut de prénom de la personne*/
+	private String prenom;
+	/** format de la date d'emprunt*/
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	/** Attribut de la date de naissance*/
 	private Date dateNaissance;
+	/** Attribut du genre de la personne*/
 	private String sexe;
 	
 		
@@ -89,8 +98,10 @@ public class Personne {
 				+ " ]";
 	}
 
-	public static void main(String []args) throws BiblioException {
-		
+	public static void main(String []args) throws BiblioException, ParseException {
+		Personne p1 = new Personne();
+		Personne p2 = new Personne("Nom", "Prénom", Personne.sdf.parse("01/01/1900") , "Homme");
+		System.out.println(p1 + "\n" + p2);
 	
 	}
 	

@@ -21,7 +21,7 @@ public class Exemplaire {
 	
 
 	
-	public Exemplaire(Integer idExemplaire, Date dateAchat, metier.EnumStatusExemplaire enumStatusExemplaire,
+	public Exemplaire(Integer idExemplaire, Date dateAchat, EnumStatusExemplaire enumStatusExemplaire,
 			String isbn) {
 		this.idExemplaire = idExemplaire;
 		this.dateAchat = dateAchat;
@@ -46,12 +46,16 @@ public class Exemplaire {
 	public void setDateAchat(Date dateAchat) {
 		this.dateAchat = dateAchat;
 	}
+	
+
 	public EnumStatusExemplaire getEnumStatusExemplaire() {
 		return EnumStatusExemplaire;
 	}
+
 	public void setEnumStatusExemplaire(EnumStatusExemplaire enumStatusExemplaire) {
-		EnumStatusExemplaire = enumStatusExemplaire;
+		this.EnumStatusExemplaire = enumStatusExemplaire;
 	}
+
 	public String getIsbn() {
 		return isbn;
 	}
@@ -69,6 +73,7 @@ public class Exemplaire {
 	
 	
 	public static void main(String []args) {
+		
 		
 	}
 
