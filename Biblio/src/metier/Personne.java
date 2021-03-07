@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Personne {
+public class Personne implements NommablePersonne {
 	/** Attribut nom de la personne*/
 	private String nom;
 	/** Attribut de prénom de la personne*/

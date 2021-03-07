@@ -29,6 +29,15 @@ public class Exemplaire {
 		this.isbn = isbn;
 	}
 	
+	public Exemplaire(Integer idExemplaire, EnumStatusExemplaire enumStatusExemplaire,
+			String isbn) {
+		this.idExemplaire = idExemplaire;
+		EnumStatusExemplaire = enumStatusExemplaire;
+		this.isbn = isbn;
+	}
+	
+	
+	
 	public Exemplaire() {
 		
 	}
@@ -48,7 +57,7 @@ public class Exemplaire {
 	}
 	
 
-	public EnumStatusExemplaire getEnumStatusExemplaire() {
+	public  EnumStatusExemplaire getEnumStatusExemplaire() {
 		return EnumStatusExemplaire;
 	}
 

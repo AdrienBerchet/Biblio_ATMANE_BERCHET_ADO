@@ -62,7 +62,7 @@ public class Employe extends Utilisateur{
 
 	@Override
 	public String toString() {
-		return "Employe [ nom = " + getNom() + ", prenom = " + getPrenom() +  
+		return "Employe [ " + super.toString() + 
 			", codeMatricule = " + codeMatricule + " - " + EnumCategorieEmploye + "]";
 	}
 
