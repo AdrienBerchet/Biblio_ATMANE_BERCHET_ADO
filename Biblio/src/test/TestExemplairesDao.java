@@ -9,9 +9,9 @@ public class TestExemplairesDao {
 		ExemplairesDao edao = new ExemplairesDao();
 				
 		// Tests de findByIsbn (1 réussi et 1 échoué)
-		System.out.println("Test findByIsbn");
-		System.out.println("Avec les ISBN \"EX000001\" et \"EX000005\", les exemplaires trouvés sont : " + edao.findByIsbn("EX000001") + " et " +edao.findByIsbn("EX000005"));
-		System.out.println("Avec les ISBN \"EX001008\" et \"EX001005\", les exemplaires trouvés sont : " + edao.findByIsbn("EX001008") + " et " +edao.findByIsbn("EX001005"));
+		System.out.println("Test findById");
+		System.out.println("Avec les ISBN \"1\" et \"2\", les exemplaires trouvés sont : " + edao.findById(1) + " et " +edao.findById(2));
+		System.out.println("Avec les ISBN \"1325\" et \"25418\", les exemplaires trouvés sont : " + edao.findById(1325) + " et " +edao.findById(25418));
 
 	}
 

@@ -100,7 +100,10 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 		if (ep.getEnumStatusExemplaire() == EnumStatusExemplaire.PRETE || ep.getEnumStatusExemplaire() == EnumStatusExemplaire.SUPPRIME){
 			throw new BiblioException();
 		} else {
-			emprunts.add(ep);	
+			emprunts.add(ep);
+			/*if (ep.getU()!=this) {
+			ep.setU(this);
+			}*/
 			ep.setEnumStatusExemplaire(EnumStatusExemplaire.PRETE);
 			nbEmpruntsEnCours++;
 		}
@@ -125,6 +128,7 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 			ex.setEnumStatusExemplaire(EnumStatusExemplaire.DISPONIBLE);
 			eep.setDateEmprunt(null);
 			eep.setEx(null);
+			eep.setU(null);
 			nbEmpruntsEnCours--;
 		}
 	}
