@@ -11,6 +11,7 @@ public class Personne implements NommablePersonne {
 	/** Attribut de prénom de la personne*/
 	private String prenom;
 	/** format de la date d'emprunt*/
+	// Penser à utiliser des LocalDate pour fiabliliser le rendu des date quelque soit le type de classe !!!!
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	/** Attribut de la date de naissance*/
 	private Date dateNaissance;

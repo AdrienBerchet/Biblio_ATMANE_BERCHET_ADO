@@ -13,6 +13,7 @@ public class Exemplaire {
 	/** Attribut de type énuméré pour la disponibilite du livre*/
 	private EnumStatusExemplaire EnumStatusExemplaire;
 	/** Formattage de la date */
+	// Penser à utiliser des LocalDate pour fiabliliser le rendu des date quelque soit le type de classe !!!!
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	/** Attribut du code ISBN*/
 	private String isbn;

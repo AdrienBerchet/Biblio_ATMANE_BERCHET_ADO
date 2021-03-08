@@ -123,6 +123,8 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 			emprunts.remove(eep);
 			archives.add(ea);
 			ex.setEnumStatusExemplaire(EnumStatusExemplaire.DISPONIBLE);
+			eep.setDateEmprunt(null);
+			eep.setEx(null);
 			nbEmpruntsEnCours--;
 		}
 	}

@@ -11,6 +11,7 @@ public class EmpruntArchive {
 	/** Attribut qui tient la date de retour*/
 	private Date dateRestitutionEff;
 	/** format de la date d'emprunt*/
+	// Penser à utiliser des LocalDate pour fiabliliser le rendu des date quelque soit le type de classe !!!!
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	

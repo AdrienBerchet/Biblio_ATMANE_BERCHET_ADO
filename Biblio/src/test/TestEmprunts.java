@@ -137,12 +137,15 @@ public class TestEmprunts {
 		System.out.println("Nombre d'emprunts : " + e2.getNbEmpruntsEnCours());
 		
 		System.out.println("\n\nTest retour d'un emprunt");
+		System.out.println("Emprunts avant rendu du livre : \n" + e2);
+		System.out.println("Nombre d'emprunts avant retour : " + e2.getNbEmpruntsEnCours());
 		EmpruntArchive ea1 = new EmpruntArchive(ep15.getDateEmprunt(),EmpruntArchive.sdf.parse("07/03/2021"));
 		e2.removeEmprunts(ep15,ex14,ea1);
-		System.out.println(e2);
-		System.out.println("Nombre d'emprunts : " + e2.getNbEmpruntsEnCours());
-		System.out.println(ea1);
+		System.out.println("\n Emprunts APRES rendu du livre ex14 de l'emprunt ep15 : \n" + e2);
+		System.out.println("Nombre d'emprunts après retour : " + e2.getNbEmpruntsEnCours());
+		System.out.println("L'emprunt est archivé : " + ea1);
 		System.out.println("Le livre rendu doit être disponible : " + ex14);
+		System.out.println("L'emprunt ep15 est garbage collecté : " + ep15);
 		
 	
 	

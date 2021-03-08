@@ -10,6 +10,7 @@ public class EmpruntEnCours {
 	private Date dateEmprunt;
 	/** format de la date d'emprunt*/
 	@SuppressWarnings("unused")
+	// Penser à utiliser des LocalDate pour fiabliliser le rendu des date quelque soit le type de classe !!!!
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	/** Attribut qui retourne l'utilisateur qui emprunte*/
 	Utilisateur u;
@@ -44,8 +45,6 @@ public class EmpruntEnCours {
 		}
 	}
 	
-	public EmpruntEnCours() {
-	}
 	
 	
 	
