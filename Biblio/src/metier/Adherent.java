@@ -1,5 +1,6 @@
 package metier;
 
+
 import java.util.Date;
 
 public class Adherent extends Utilisateur {

@@ -11,7 +11,7 @@ import metier.Utilisateur;
 
 public class TestDeBaseEmprunt {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, BiblioException {
 		System.out.println("Test de base : emprunt adhérent et employé");
 		UtilisateursDao udao = new UtilisateursDao();
 		Utilisateur u1 = udao.findById(100);
@@ -27,25 +27,16 @@ public class TestDeBaseEmprunt {
 		Exemplaire ex2 = edao.findById(2);
 		System.out.println(" Exemplaire instancié via classe Dao " + ex2);
 		
-		System.out.println(" \n Emprunt ex1 pour Adhérent u1");
-		EmpruntEnCours ep1 = new EmpruntEnCours (EmpruntEnCours.sdf.parse("01/03/2021"),ex1);
-		try {
-			u1.addEmpruntEnCours(ep1);
-			} catch (BiblioException e) {
-				System.out.println(e);
-			}
-			System.out.println(u1);
+		EmpruntEnCours ep1 = new EmpruntEnCours (EmpruntEnCours.sdf.parse("01/03/2021"),u1,ex1);
 			
-			System.out.println(" \n Emprunt ex2 pour Adhérent u2");	
-		EmpruntEnCours ep2 = new EmpruntEnCours (EmpruntEnCours.sdf.parse("01/03/2021"),ex2);	
-		try {
-			u2.addEmpruntEnCours(ep2);
-			} catch (BiblioException e) {
-				System.out.println(e);
-			}
-			System.out.println(u2);
-			System.out.println("emprunt en cours pour adhérent a0 : " + u1.getNbEmpruntsEnCours());
-			System.out.println("emprunt en cours pour employe e0 : " + u2.getNbEmpruntsEnCours());
+		EmpruntEnCours ep2 = new EmpruntEnCours (EmpruntEnCours.sdf.parse("01/03/2021"),u2,ex2);	
+			
+		System.out.println("\n\n Bilan");
+		System.out.println("\n Emprunt en cours pour adhérent u1 : " + u1.getNbEmpruntsEnCours());
+		System.out.println("\n Utilisateur pour emprunt en cours ep1 : " + ep1.getU());
+		System.out.println("\n Emprunt en cours pour employe u2 : " + u2.getNbEmpruntsEnCours());
+		System.out.println("\n Utilisateur pour emprunt en cours ep2 : " + ep2.getU());
+			
 
 	}
 

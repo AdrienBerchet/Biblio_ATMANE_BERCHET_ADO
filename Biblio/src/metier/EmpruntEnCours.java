@@ -30,22 +30,26 @@ public class EmpruntEnCours {
 			this.ex = ex;
 			this.u = u;
 			this.dateEmprunt = dateEmprunt;
+			try {
+			u.addEmpruntEnCours(this);
+			} catch (BiblioException e) {
+				System.out.println(e);
+			}
 		}
 	}
 	
 
-	public EmpruntEnCours(Date dateEmprunt, Exemplaire ex) {
+	public EmpruntEnCours(Date dateEmprunt, Exemplaire ex ) throws BiblioException {
 		if (ex.getEnumStatusExemplaire() == metier.EnumStatusExemplaire.PRETE || ex.getEnumStatusExemplaire() == metier.EnumStatusExemplaire.SUPPRIME){
 			System.out.println("Erreur : Livre non disponible");
 		} else {
 			ex.setEnumStatusExemplaire(metier.EnumStatusExemplaire.PRETE);
 			this.ex = ex;
 			this.dateEmprunt = dateEmprunt;
-			getU();
+		
+			
 		}
 	}
-	
-	
 	
 	
 	public EnumStatusExemplaire getEnumStatusExemplaire() {
@@ -62,8 +66,8 @@ public class EmpruntEnCours {
 		return u;
 	}
 
-	public void setU(Utilisateur u) {
-		this.u = u;
+	public void setU(Utilisateur u) throws BiblioException {
+				this.u=u;				
 	}
 
 	public Exemplaire getEx() {
@@ -82,9 +86,10 @@ public class EmpruntEnCours {
 		this.dateEmprunt = dateEmprunt;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "EmpruntEnCours [ dateEmprunt = " + dateEmprunt + ", utilisateur = " + u + ", exemplaire = " + ex + " ]\n";
+		return "EmpruntEnCours [ dateEmprunt = " + dateEmprunt + /*", utilisateur = " + u +*/ ", exemplaire = " + ex + " ]\n";
 	}
 
 	public static void main(String[] args) throws ParseException {

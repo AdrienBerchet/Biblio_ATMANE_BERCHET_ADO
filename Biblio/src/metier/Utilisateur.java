@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
+
 public class Utilisateur extends Personne implements NommableUtilisateur{
 	/** Identifiant de l'utilisateur est un nombre entier*/
 	private Integer idUtilisateur;
@@ -95,20 +96,19 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 	}
 	
 	
-	
 	public void addEmpruntEnCours(EmpruntEnCours ep) throws BiblioException  {
 		if (ep.getEnumStatusExemplaire() == EnumStatusExemplaire.PRETE || ep.getEnumStatusExemplaire() == EnumStatusExemplaire.SUPPRIME){
 			throw new BiblioException();
 		} else {
-			emprunts.add(ep);
-			/*if (ep.getU()!=this) {
-			ep.setU(this);
-			}*/
+			this.emprunts.add(ep);
 			ep.setEnumStatusExemplaire(EnumStatusExemplaire.PRETE);
 			nbEmpruntsEnCours++;
 		}
 	}
 	
+
+
+
 	public boolean containsExemplaire (Exemplaire ex) {
 		if (ex.getEnumStatusExemplaire() == EnumStatusExemplaire.PRETE) {
 			return true;
@@ -117,7 +117,7 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 		}
 	}
 	
-	public void removeEmprunts(EmpruntEnCours eep, Exemplaire ex, EmpruntArchive ea) {
+	public void removeEmprunts(EmpruntEnCours eep, Exemplaire ex, EmpruntArchive ea) throws BiblioException {
 		if (emprunts.size() < 1) {
 			System.out.println("Erreur : Aucun livre emprunté");
 		} else if (!containsExemplaire(ex)){
@@ -148,5 +148,6 @@ public class Utilisateur extends Personne implements NommableUtilisateur{
 	public static void main(String []args) throws BiblioException, ParseException  {
 		
 	}
+
 			
 }
